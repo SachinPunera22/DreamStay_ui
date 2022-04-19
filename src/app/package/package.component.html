@@ -1,0 +1,73 @@
+<div class="content p-5" style="background-color: #f7f7f7">
+  <div class="row">
+    <div *ngFor="let package of packages" class="col-sm-6 col-xxl-4">
+      <div class="card mb-5 mx-4 shadow-lg">
+        <div
+          class="bg-image hover-overlay ripple"
+          data-mdb-ripple-color="light"
+        >
+          <img [src]="package.imageCover" class="img-fluid" />
+          <a href="#!">
+            <div
+              class="mask"
+              style="background-color: rgba(251, 251, 251, 0.15)"
+            ></div>
+          </a>
+        </div>
+
+        <div class="card-body">
+          <h6>{{ package.difficulty }} {{ package.totalDays }} DAY TOUR</h6>
+          <div>
+            <p>{{ package.summary }}</p>
+            <div class="row">
+              <div class="col-6">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span class="ps-1">{{ package.stateLocation }},India</span>
+              </div>
+              <div class="col-6">
+                <i class="bi bi-flag-fill"></i>
+                <span class="ps-1">{{ package.totalStops }} stops</span>
+              </div>
+              <div class="col-6">
+                <i class="bi bi-calendar"></i>
+                <span class="ps-1">{{ package.packageDate }} 2022</span>
+              </div>
+              <div class="col-6">
+                <i class="bi bi-person"></i>
+                <span class="ps-1">{{ package.maxGroupSize }}</span>
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #f7f7f7">
+            <div class="row p-3 mt-1">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12">{{ package.price }} Per Person</div>
+                </div>
+                <div class="col-12">
+                  {{ package.ratingsAverage }} rating ({{
+                    package.ratingsQuantity
+                  }})
+                </div>
+              </div>
+
+              <div class="col-6 d-flex justify-content-end">
+                <a
+                  ><button class="btn btn-primary border rounded-pill">
+                    Button
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row">
+      <div class="image">
+        <div class="my_bg img-fluid"></div>
+      </div>
+    </div> -->

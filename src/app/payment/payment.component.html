@@ -1,0 +1,34 @@
+<div class="row mx-2 my-5 d-flexx justify-content-center">
+  <div class="col-4 ps-5">
+    <h3 class="text-center">{{ brandName }}</h3>
+    <h4>{{ tourName }}</h4>
+    <h1>${{ tourPrice }}</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <div class="pt-5">
+      <img
+        class="sample-image"
+        src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
+        alt=""
+      />
+    </div>
+  </div>
+  <div class="col-4">
+    <h3 class="text-center">Pay with Card</h3>
+    <form
+      action="
+      "
+    >
+      <label for=""> Name </label>
+      <input type="text" placeholder="Enter Your Name" />
+
+      <label for=""> Card Information </label>
+      <input type="text" placeholder="4242 4242 4242" />
+      <label for=""> CVV </label>
+      <input type="text" placeholder="CVV" />
+      <label for=""> Expiry date </label>
+      <input type="text" placeholder="Expiry date" />
+
+      <button class="btn btn-primary rounded-pill">Pay ${{ tourPrice }}</button>
+    </form>
+  </div>
+</div>

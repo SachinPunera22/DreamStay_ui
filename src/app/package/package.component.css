@@ -1,0 +1,26 @@
+.my_bg {
+  background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
+
+  text-align: center;
+  opacity: 0.7;
+}
+
+.image {
+  background-image: url("https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp");
+
+  text-align: center;
+  object-fit: cover;
+}
+
+.cover-image {
+  background-image: url("https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp");
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+span {
+  font-size: 90%;
+}
