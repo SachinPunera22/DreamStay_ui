@@ -7,10 +7,16 @@ import { Package } from '../models/package.model';
   providedIn: 'root',
 })
 export class PackageService {
-  apiUrl = 'http://localhost:3000/package';
+  packageListUrl = 'http://localhost:3000/package';
+  packageDetail='http://localhost:3000/package/packageDetail';
+
   constructor(private http: HttpClient) {}
 
   all(): Observable<Package[]> {
-    return this.http.get<Package[]>(this.apiUrl);
+    return this.http.get<Package[]>(this.packageListUrl);
+  }
+
+  getPackage(id:any):Observable<Package> {
+    return this.http.get<Package>(this.packageDetail+"/"+id);
   }
 }

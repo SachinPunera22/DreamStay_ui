@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="content p-5" style="background-color: #f7f7f7">
   <div class="row">
     <div *ngFor="let package of packages" class="col-sm-6 col-xxl-4">
@@ -53,8 +54,9 @@
 
               <div class="col-6 d-flex justify-content-end">
                 <a
-                  ><button class="btn btn-primary border rounded-pill">
-                    Button
+                  ><button class="btn btn-primary border rounded-pill"
+                  (click)="onSubmit(package._id)">
+                    Details
                   </button>
                 </a>
               </div>
@@ -65,7 +67,7 @@
     </div>
   </div>
 </div>
-
+<app-footer></app-footer>
 <!-- <div class="row">
       <div class="image">
         <div class="my_bg img-fluid"></div>

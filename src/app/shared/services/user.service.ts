@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { User } from '../models/user.model';
@@ -7,14 +7,28 @@ import { User } from '../models/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  apiUrl = 'http://localhost:3000/register';
+  
+  token=localStorage.getItem("token")
+  registerUrl = 'http://localhost:3000/user/register';
+  userDetail='http://localhost:3000/user/'
   constructor(private http: HttpClient) {}
 
   all(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+    return this.http.get<User[]>(this.registerUrl);
   }
 
-  create(data: any): Observable<User[]> {
-    return this.http.post<User[]>(this.apiUrl, data);
+  createUser(data: any): Observable<User> {
+    return this.http.post<User>(this.registerUrl, data);
   }
+
+  getUser(id:string):Observable<User> {
+    if(!this.token)
+    {
+          console.log("No token")
+    }
+    return this.http.get<User>(this.userDetail+id,{
+      headers:new HttpHeaders({'authorization':'Bearer '+this.token})
+    });
+  }
+ 
 }

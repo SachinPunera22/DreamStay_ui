@@ -11,15 +11,17 @@ import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { PackageDetailComponent } from './package-detail/package-detail.component';
-import { PaymentComponent } from './payment/payment.component';
-import { PackageComponent } from './package/package.component';
+import { PaymentComponent } from './payment/payment.component'; 
+import { PackageComponent } from './package/package.component'; 
+                                                                                                                                      
 
 const routes: Routes = [
   { path: '', component: PackageComponent },
   { path: 'cities', component: CitiesComponent },
   { path: 'login', component: LoginComponent },
   { path: 'sign-in', component: SignUpComponent },
-  { path: 'package-detail', component: PackageDetailComponent },
+  { path: 'cities/package-detail', component: PackageDetailComponent },
+  { path: 'package-detail/:id', component: PackageDetailComponent },
   { path: 'payment', component: PaymentComponent },
 ];
 
