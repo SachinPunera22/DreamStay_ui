@@ -10,8 +10,7 @@ import { User } from '../shared/models/user.model';
 })
 export class HeaderComponent implements OnInit {
   brandName = 'Dream Stay';
-  loggedIn = false;
-  id: any;
+  loggedIn:boolean;
 
   public User: User = {} as User;
   constructor(
@@ -19,24 +18,20 @@ export class HeaderComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
-    console.log("constructor called")
-    this.id = '62658742cedb1e3c227eb64d';
-    this.UserService.getUser(this.id).subscribe({
-      next: (data: User) => {
-        this.User = data;
-        this.loggedIn = true;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-    // this.id = this.route.snapshot.params['id'];
+    this.User=JSON.parse(localStorage.getItem("user"))
+    if(!this.User)
+     this.loggedIn=false
+    else{
+      this.loggedIn=true
+    }
+    
   }
 
   onLogout() {
+   
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.loggedIn=false
   }
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 }

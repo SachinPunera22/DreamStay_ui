@@ -1,35 +1,47 @@
 <app-header></app-header>
-<div class="row mx-2 my-5 d-flexx justify-content-center">
-  <div class="col-4 ps-5">
-    <h3 class="text-center">{{ brandName }}</h3>
-    <h4>{{ tourName }}</h4>
-    <h1>${{ tourPrice }}</h1>
+<div class="row mx-2 my-5 d-flex justify-content-center">
+  <div class="col-lg-4 col-sm-12 col-xs-12 ps-5">
+    <div class="row">
+      <div class="col-12">
+        <h4>{{ package?.name }}</h4>
+    <h1>₹{{ package?.price }}</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <div class="pt-5">
-      <img
-        class="sample-image"
-        src="https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp"
-        alt=""
-      />
+      </div>
+    
+    <div class="col-12 ">
+      <img class="img-fluid" [src]="package?.imageCover" alt="" />
     </div>
   </div>
-  <div class="col-4">
+</div>
+  <div class="col-lg-4 col-sm-12 col-xs-12">
     <h3 class="text-center">Pay with Card</h3>
-    <form
-      action="
-      "
-    >
-      <label for=""> Name </label>
-      <input type="text" placeholder="Enter Your Name" />
+    <form>
+      <div class="form-outline">
+        <label class="form-label" for=""> Name </label>
+        <input
+          class="form-control mb-4"
+          type="text"
+          placeholder="Enter Your Name"
+        />
 
-      <label for=""> Card Information </label>
-      <input type="text" placeholder="4242 4242 4242" />
-      <label for=""> CVV </label>
-      <input type="text" placeholder="CVV" />
-      <label for=""> Expiry date </label>
-      <input type="text" placeholder="Expiry date" />
-
-      <button class="btn btn-primary rounded-pill">Pay ${{ tourPrice }}</button>
+        <label class="form-label" for=""> Card Information </label>
+        <input
+          class="form-control mb-4"
+          type="text"
+          placeholder="4242 4242 4242"
+        />
+        <label class="form-label" for=""> CVV </label>
+        <input class="form-control mb-4" type="text" placeholder="CVV" />
+        <label class="form-label" for=""> Expiry date </label>
+        <input
+          class="form-control mb-4"
+          type="text"
+          placeholder="Expiry date"
+        />
+      </div>
+      <button class="btn btn-primary rounded-pill">
+        Pay ₹{{ package?.price }}
+      </button>
     </form>
   </div>
 </div>

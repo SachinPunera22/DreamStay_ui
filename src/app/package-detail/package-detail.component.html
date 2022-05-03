@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-12 cover-image wh-100 vh-100">
       <div class="d-flex justify-content-center mt-5">
-        <h1>{{ tittle }}</h1>
+        <h1>{{ package?.name }}</h1>
       </div>
     </div>
 
@@ -20,16 +20,16 @@
         </div>
         <div class="col-3">
           <ul style="list-style: none">
-            <li>April 2021</li>
-            <li>April 2021</li>
-            <li>April 2021</li>
-            <li>April 2021</li>
+            <li>{{ package.nextDate}}h</li>
+            <li>{{ package.difficulty}}</li>
+            <li>{{ package.maxGroupSize}}</li>
+            <li>{{ package.ratingsAverage}}</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col-lg-6 col-sm-12 p-5">
-      <h6 class="mt-5">About the {{ tittle }} TOUR</h6>
+      <h6 class="mt-5">About the {{ package?.name }} TOUR</h6>
 
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione fuga
@@ -42,6 +42,7 @@
       </p>
     </div>
   </div>
+  <!-- reviews -->
   <div
     class="row d-flex justify-content-center rounded py-2"
     style="background-color: aqua"
@@ -166,7 +167,7 @@
       </div>
     </div>
   </div>
-
+ <!-- reviews -->
   <div
     class="row d-flex justify-content-center border rounded-pill-lg rounded-sm m-5 py-3 shadow"
   >
@@ -177,15 +178,21 @@
         officia neque facilis! Odit voluptatum alias molestiae.
       </p>
     </div>
-    <div class="col-lg-3 p-5">
-      <button class="btn btn-primary rounded-pill"
-      routerLink="/payment"
-      >Log in to book tour</button>
+    <div *ngIf="loggedIn; else loggedOut" class="col-lg-3 p-5">
+      <button class="btn btn-primary rounded-pill" 
+      (click)="bookTour()">
+        Book tour now
+      </button>
     </div>
+
+    <ng-template #loggedOut>
+      <div class="col-lg-3 p-5">
+        <button class="btn btn-primary rounded-pill" routerLink="/login">
+          Log in to book tour
+        </button>
+      </div>
+    </ng-template>
   </div>
 </div>
 
-<div>
-  {{package?.difficulty}}
-</div>
 <app-footer></app-footer>

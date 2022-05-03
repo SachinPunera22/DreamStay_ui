@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{ AuthService } from "../shared/services/auth.service"
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../shared/models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   passed=true;
-
-  constructor(public authService: AuthService, private router: Router) {}
+ 
+  public User: User = {} as User;
+  constructor(public authService: AuthService, private router: Router ) {}
 
   onSubmit(form: NgForm) {
     const data = {
@@ -19,21 +21,23 @@ export class LoginComponent implements OnInit {
       password: form.value.password,
     };
 
-    this.authService.login(data).subscribe(
-      (res) => {
-        this.router.navigate(['']);
-        console.log(res.token)
-        localStorage.setItem("token",res.token)
-      },
-      (err) => {
+    this.authService.login(data).subscribe({
+      next: (res) => {
+        let user = JSON.stringify(res.user);
+        localStorage.setItem('token', res.token);
+        localStorage.setItem('user', user);
+            this.router.navigate(['']);
+          },
+          
+     error: (err) => {
         this.passed=false
         setTimeout(() => {
           this.passed = true;
         }, 3000);
         console.error(err);
       }
-    );
-  }
-
+    });
+  
+    }
   ngOnInit(): void {}
 }

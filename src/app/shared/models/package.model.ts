@@ -14,4 +14,5 @@ export interface Package {
   stateLocation: String;
   totalStops: Number;
   totalDays: Number;
+  nextDate:Date;
 }
