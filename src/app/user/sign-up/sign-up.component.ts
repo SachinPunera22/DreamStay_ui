@@ -3,8 +3,8 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../shared/services/user.service';
 import { User } from '../../shared/models/user.model';
-
-
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { LoginComponent } from '../../login/login.component';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -14,9 +14,12 @@ export class SignUpComponent implements OnInit {
   pass = '';
   rpassword = '';
   uniqueEmail = true;
-  
 
-  constructor(public userService: UserService, private router: Router) {}
+  constructor(
+    public userService: UserService,
+    private router: Router,
+    public dialog: MatDialog
+  ) {}
 
   onSubmit(form: NgForm) {
     const data = {
@@ -27,17 +30,29 @@ export class SignUpComponent implements OnInit {
 
     this.userService.createUser(data).subscribe(
       (res) => {
-        this.router.navigate(['login']);
-        localStorage.setItem("token",res.token)
+        this.openLoginDialog();
       },
       (err) => {
-        this.uniqueEmail=false
+        this.uniqueEmail = false;
         setTimeout(() => {
           this.uniqueEmail = true;
         }, 3000);
         console.error(err);
       }
     );
+  }
+  openLoginDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.panelClass = 'dialog-responsive';
+    dialogConfig.backdropClass = 'backdropClass';
+
+    const dialogRef = this.dialog.open(LoginComponent, dialogConfig);
+
+    dialogRef.afterClosed().subscribe((res) => {
+      this.router.navigate(['']);
+    });
   }
 
   ngOnInit(): void {}

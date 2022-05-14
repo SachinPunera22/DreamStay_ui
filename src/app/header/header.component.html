@@ -64,8 +64,9 @@
          
           </ul>
         </li>
+        
         <li *ngIf="!loggedIn" class="nav-item">
-          <a class="nav-link" routerLink="/login">Log In</a>
+          <a class="nav-link" (click)="openLoginDialog()">Log In</a>
         </li>
         
       </ul>

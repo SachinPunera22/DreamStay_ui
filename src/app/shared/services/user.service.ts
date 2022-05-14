@@ -9,8 +9,10 @@ import { User } from '../models/user.model';
 export class UserService {
   
   token=localStorage.getItem("token")
-  registerUrl = 'http://localhost:3000/user/register';
-  userDetail='http://localhost:3000/user/'
+  // registerUrl = 'http://localhost:3000/user/register';
+  // userDetail='http://localhost:3000/user/'
+  registerUrl = 'user/register';
+  userDetail='user/'
   constructor(private http: HttpClient) {}
 
   all(): Observable<User[]> {

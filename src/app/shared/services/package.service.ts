@@ -7,8 +7,10 @@ import { Package } from '../models/package.model';
   providedIn: 'root',
 })
 export class PackageService {
-  packageListUrl = 'http://localhost:3000/package';
-  packageDetail='http://localhost:3000/package/packageDetail';
+  // packageListUrl = 'http://localhost:3000/package';
+  // packageDetail='http://localhost:3000/package/packageDetail';
+  packageListUrl = 'package';
+  packageDetail='package/packageDetail';
 
   constructor(private http: HttpClient) {}
 

@@ -20,6 +20,7 @@ export class PackageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.PackageService.all().subscribe((packages) => {
+      console.log("package")
       this.packages = packages;
     });
   }

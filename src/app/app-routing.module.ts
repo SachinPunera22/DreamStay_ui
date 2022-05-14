@@ -18,11 +18,12 @@ import { PackageComponent } from './package/package.component';
 const routes: Routes = [
   { path: '', component: PackageComponent },
   { path: 'cities', component: CitiesComponent },
-  { path: 'login', component: LoginComponent },
+ 
   { path: 'sign-in', component: SignUpComponent },
   { path: 'cities/package-detail', component: PackageDetailComponent },
   { path: 'package-detail/:id', component: PackageDetailComponent },
   { path: 'payment/:id', component: PaymentComponent },
+  { path: '**', redirectTo: "" },
 ];
 
 @NgModule({
