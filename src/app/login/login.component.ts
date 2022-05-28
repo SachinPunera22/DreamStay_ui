@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(data).subscribe({
       next: (res) => {
         let user = JSON.stringify(res.user);
+        console.log('token from frontend:' + res.token);
         localStorage.setItem('token', res.token);
         localStorage.setItem('user', user);
         this.dialogRef.close();

@@ -1,6 +1,5 @@
-.my_bg {
+/* .my_bg {
   background-image: linear-gradient(to right bottom, #7dd56f, #28b487);
-
   text-align: center;
   opacity: 0.7;
 }
@@ -16,11 +15,50 @@
   background-image: url("https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp");
   height: 100%;
 
-  /* Center and scale the image nicely */
+ 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 span {
   font-size: 90%;
+} */
+
+.brandName {
+  font-family: Rubik, sans-serif;
+  font-size: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  top: 0;
+}
+
+.description {
+  font-family: Playfair Display, serif;
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.vh-100 {
+  min-height: 100vh;
+}
+#triangle-1 {
+  top: 0px;
+  right: 0px;
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left: 75px solid transparent;
+  border-top: 375px solid #020024;
+}
+#triangle-2 {
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-left: 75px solid transparent;
+
+  border-bottom: 375px solid #020024;
 }
