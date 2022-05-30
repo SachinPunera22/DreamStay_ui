@@ -1,118 +1,114 @@
-<!-- <div class="container-fluid" style="background-color: #006e7f"> -->
-  <div class="container-fluid" style=" background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%,
-  rgba(0,212,255,1) 100% );">
-    
-
-    <div class="row">
-      <div class="col-5 m-0 p-0 position-relative">
-        <ngb-carousel
-          *ngIf="images"
-          [showNavigationArrows]="showNavigationArrows"
-        >
-          <ng-template ngbSlide *ngFor="let image of images">
-            <div class="picsum-img-wrapper">
-              <img class="vh-100" [src]="image.img" alt="Random slide" />
-            </div>
-          </ng-template>
-        </ngb-carousel>
-        <div id="triangle-1"></div>
-        <div id="triangle-2"></div>
-      </div>
-      <div class="col-7 m-0 p-0 d-flex align-items-center p-5">
-        <div class="row">
-          <div class="col-12 mb-">
-            <h1 class="brandName">Dream Stay</h1>
+<div class="container-fluid" style="background-color: #000000">
+  <div class="row">
+    <div class="col-5 m-0 p-0 position-relative">
+      <ngb-carousel
+        *ngIf="images"
+        [showNavigationArrows]="showNavigationArrows"
+      >
+        <ng-template ngbSlide *ngFor="let image of images">
+          <div class="picsum-img-wrapper">
+            <img class="vh-100" [src]="image.img" alt="Random slide" />
           </div>
-          <div class="col-12">
-            <h2 class="description mb-3">
-              Plan Your Dream stay Now with exciting cashback offers and prizes
-            </h2>
-            <p class="description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
-              blanditiis eum totam sed consequatur quisquam facilis nostrum
-              voluptates odio soluta, laudantium ratione reiciendis? Eveniet,
-              eius ab harum recusandae quo magnam?
-            </p>
-          </div>
-        </div>
-      </div>
+        </ng-template>
+      </ngb-carousel>
+      <div id="triangle-1"></div>
+      <div id="triangle-2"></div>
     </div>
-    <app-header></app-header>
-    <div class="content p-5" style="background-color: #f7f7f7">
+    <div class="col-7 m-0 p-0  p-5">
       <div class="row">
-        <div *ngFor="let package of packages" class="col-sm-6 col-xxl-4">
-          <div class="card mb-5 mx-4 shadow-lg">
-            <div
-              class="bg-image hover-overlay ripple"
-              data-mdb-ripple-color="light"
-            >
-              <img [src]="package.imageCover" class="img-fluid" />
-              <a href="#!">
-                <div
-                  class="mask"
-                  style="background-color: rgba(251, 251, 251, 0.15)"
-                ></div>
-              </a>
-            </div>
-
-            <div class="card-body">
-              <h6>{{ package.difficulty }} {{ package.totalDays }} DAY TOUR</h6>
-              <div>
-                <p>{{ package.summary }}</p>
-                <div class="row">
-                  <div class="col-6">
-                    <i class="bi bi-geo-alt-fill"></i>
-                    <span class="ps-1">{{ package.stateLocation }},India</span>
-                  </div>
-                  <div class="col-6">
-                    <i class="bi bi-flag-fill"></i>
-                    <span class="ps-1">{{ package.totalStops }} stops</span>
-                  </div>
-                  <div class="col-6">
-                    <i class="bi bi-calendar"></i>
-                    <span class="ps-1">{{ package.packageDate }} 2022</span>
-                  </div>
-                  <div class="col-6">
-                    <i class="bi bi-person"></i>
-                    <span class="ps-1">{{ package.maxGroupSize }}</span>
-                  </div>
-                </div>
-              </div>
-              <div style="background-color: #f7f7f7">
-                <div class="row p-3 mt-1">
-                  <div class="col-6">
-                    <div class="row">
-                      <div class="col-12">{{ package.price }} Per Person</div>
-                    </div>
-                    <div class="col-12">
-                      {{ package.ratingsAverage }} rating ({{
-                        package.ratingsQuantity
-                      }})
-                    </div>
-                  </div>
-
-                  <div class="col-6 d-flex justify-content-end">
-                    <a
-                      ><button
-                        class="btn btn-primary border rounded-pill"
-                        (click)="onSubmit(package._id)"
-                      >
-                        Details
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="col-12 ">
+          <h1 class="brandName">Dream Stay</h1>
         </div>
-      </div>
-    </div>
-    <app-footer></app-footer>
-    <div class="row">
-      <div class="image">
-        <div class="my_bg img-fluid"></div>
+        <div class="col-12">
+          <h2 class="tagline mb-3">
+            Plan Your Dream stay Now with exciting cashback offers and prizes
+          </h2>
+          <p class="description">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
+            blanditiis eum totam sed consequatur quisquam facilis nostrum
+            voluptates odio soluta, laudantium ratione reiciendis? Eveniet, eius
+            ab harum recusandae quo magnam?
+          </p>
+        </div>
       </div>
     </div>
   </div>
+</div>
+  <app-header></app-header>
+  <div class="content p-5" style="background-color: #f7f7f7">
+    <div class="row">
+      <div *ngFor="let package of packages" class="col-sm-6 col-xxl-4">
+        <div class="card mb-5 mx-4 shadow-lg">
+          <div
+            class="bg-image hover-overlay ripple"
+            data-mdb-ripple-color="light"
+          >
+            <img [src]="package.imageCover" class="img-fluid" />
+            <a href="#!">
+              <div
+                class="mask"
+                style="background-color: rgba(251, 251, 251, 0.15)"
+              ></div>
+            </a>
+          </div>
+
+          <div class="card-body">
+            <h6>{{ package.difficulty }} {{ package.totalDays }} DAY TOUR</h6>
+            <div>
+              <p>{{ package.summary }}</p>
+              <div class="row">
+                <div class="col-6">
+                  <i class="bi bi-geo-alt-fill"></i>
+                  <span class="ps-1">{{ package.stateLocation }},India</span>
+                </div>
+                <div class="col-6">
+                  <i class="bi bi-flag-fill"></i>
+                  <span class="ps-1">{{ package.totalStops }} stops</span>
+                </div>
+                <div class="col-6">
+                  <i class="bi bi-calendar"></i>
+                  <span class="ps-1">{{ package.packageDate }} 2022</span>
+                </div>
+                <div class="col-6">
+                  <i class="bi bi-person"></i>
+                  <span class="ps-1">{{ package.maxGroupSize }}</span>
+                </div>
+              </div>
+            </div>
+            <div style="background-color: #f7f7f7">
+              <div class="row p-3 mt-1">
+                <div class="col-6">
+                  <div class="row">
+                    <div class="col-12">{{ package.price }} Per Person</div>
+                  </div>
+                  <div class="col-12">
+                    {{ package.ratingsAverage }} rating ({{
+                      package.ratingsQuantity
+                    }})
+                  </div>
+                </div>
+
+                <div class="col-6 d-flex justify-content-end">
+                  <a
+                    ><button
+                      class="btn btn-primary border rounded-pill"
+                      (click)="onSubmit(package._id)"
+                    >
+                      Details
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  <!-- <div class="row">
+    <div class="image">
+      <div class="my_bg img-fluid"></div>
+    </div>
+  </div> -->
 

@@ -1,0 +1,41 @@
+<app-header></app-header>
+<div class="row mx-2 my-5 d-flex justify-content-center">
+  <div class="col-lg-4 col-sm-12 col-xs-12 ps-5">
+    <div class="row">
+      <div class="col-12">
+        <h4>{{ package?.name }}</h4>
+    <h1>₹{{ package?.price }}</h1>
+    <p>{{package?.description}}</p>
+      </div>
+    
+    <div class="col-12 ">
+      <img class="img-fluid" [src]="package?.imageCover" alt="" />
+    </div>
+  </div>
+</div>
+  <div class="col-lg-4 col-sm-12 col-xs-12">
+    <h1 class="text-center mb-3">Booking Details</h1>
+      <div class="form-outline">
+        <h4 class="d-inline">Booking Id :</h4>
+       <span >
+         {{booking?._id}}
+       </span>
+       <hr>
+       <h4 class="d-inline">Booking Name :</h4>
+       <span>
+         {{booking?.bookingName}}
+       </span><hr>
+       <h4 class="d-inline">Email address : </h4>
+       <span>
+         {{user?.email}}
+       </span><hr>
+       <h4 class="d-inline">Booking time :</h4>
+       <span >
+         {{package?.packageDate}}
+       </span><hr>
+      </div>
+  
+  </div>
+</div>
+<app-footer></app-footer>
+

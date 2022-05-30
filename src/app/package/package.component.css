@@ -30,14 +30,21 @@ span {
   color: #ffffff;
   font-weight: bold;
   display: flex;
-  top: 0;
+  margin-bottom: 30%;
 }
-
-.description {
+.description{
+  font-family: Playfair Display, serif;
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: bold;
+  line-height: normal;
+}
+.tagline{
   font-family: Playfair Display, serif;
   font-size: 2rem;
   color: #ffffff;
   font-weight: bold;
+  line-height: normal;
 }
 
 .vh-100 {

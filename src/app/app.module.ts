@@ -22,7 +22,6 @@ import { LoginComponent } from './login/login.component';
 import { PackageDetailComponent } from './package-detail/package-detail.component';
 import { UserComponent } from './user/user.component';
 import { SignUpComponent } from './user/sign-up/sign-up.component';
-import { PaymentComponent } from './payment/payment.component';
 import { PackageComponent } from './package/package.component';
 import { PackageListComponent } from './Admin/Packages/package-list/package-list.component';
 import { SideNavComponent } from './Admin/side-nav/side-nav.component';
@@ -32,6 +31,7 @@ import {
   NgxUiLoaderModule,
   NgxUiLoaderConfig,
 } from 'ngx-ui-loader';
+import { BookingStatusComponent } from './booking-status/booking-status.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: 'red',
@@ -73,10 +73,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     PackageDetailComponent,
     UserComponent,
     SignUpComponent,
-    PaymentComponent,
     PackageComponent,
     PackageListComponent,
     SideNavComponent,
+    BookingStatusComponent,
   ],
   imports: [
     BrowserModule,
