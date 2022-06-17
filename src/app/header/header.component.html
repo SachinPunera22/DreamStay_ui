@@ -1,6 +1,6 @@
 <nav
-  class="navbar navbar-expand-lg navbar-dark p-3 position-sticky fixed-top"
-  style="background-color: #444444"
+  class="navbar navbar-expand-lg navbar-dark p-3  "
+  style="background-color: #204a58"
 >
   <div class="container-fluid">
     <a class="navbar-brand" href="#">{{ brandName }}</a>
@@ -51,24 +51,19 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            {{User?.fullName}}
+            {{ User?.fullName }}
           </a>
 
           <!-- Dropdown items -->
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            
-            
-            <li><a class="dropdown-item" 
-              (click)="onLogout()"
-              >Log Out</a></li>
-         
+            <li><a class="dropdown-item" (click)="onLogout()">Log Out</a></li>
+            <li><a class="dropdown-item" (click)="onBooking()">Bookings</a></li>
           </ul>
         </li>
-        
+
         <li *ngIf="!loggedIn" class="nav-item">
           <a class="nav-link" (click)="openLoginDialog()">Log In</a>
         </li>
-        
       </ul>
     </div>
   </div>

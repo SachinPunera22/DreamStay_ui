@@ -1,0 +1,14 @@
+table.dataTable {
+    color: #479dff;
+    border-style: none;
+}
+
+table.dataTable thead th {
+    color: #479dff;
+    font-size: 14px;
+    border-color: rgba(215, 218, 227, 0.3);
+}
+.margin-zero{
+    margin: 0px !important;
+    padding: 0px !important;
+}

@@ -13,7 +13,7 @@ import { LoginComponent } from '../login/login.component';
 export class HeaderComponent implements OnInit {
   brandName = 'Dream Stay';
   loggedIn:boolean;
-
+  public id:string;
   public User: User = {} as User;
   constructor(
     public UserService: UserService,
@@ -53,6 +53,14 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     this.loggedIn=false
+    this.router.navigate(['']);
+  }
+
+  onBooking(){
+    this.User=JSON.parse(localStorage.getItem("user"))
+   
+
+ this.router.navigate(['/booking-status/' + this.User._id ]);
   }
   ngOnInit(): void {}
 }

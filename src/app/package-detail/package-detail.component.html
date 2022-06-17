@@ -2,14 +2,14 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12 cover-image wh-100 vh-100">
-      <div class="d-flex justify-content-center mt-5">
-        <h1>{{ package?.name }}</h1>
+      <div class="d-flex justify-content-center" style="margin-top: 15%">
+        <h1 class="packageName">{{ package?.name | uppercase }}</h1>
       </div>
     </div>
 
     <div class="col-lg-6 col-sm-12" style="background-color: #f7f7f7">
-      <h6 class="mt-5 text-center">QUICK FACTS</h6>
-      <div class="row">
+      <h2 class="mt-5 text-center">QUICK FACTS</h2>
+      <div class="row" style="font-size: large">
         <div class="col-3 list-margin">
           <ul style="list-style: none">
             <li>Next date</li>
@@ -19,26 +19,23 @@
           </ul>
         </div>
         <div class="col-3">
-          <ul style="list-style: none">
-            <li>{{ package.packageDate}}</li>
-            <li>{{ package.difficulty}}</li>
-            <li>{{ package.maxGroupSize}}</li>
-            <li>{{ package.ratingsAverage}}</li>
+          <ul style="list-style: none; color: #a0bcc2">
+            <li>{{ package.packageDate }}</li>
+            <li>{{ package.difficulty }}</li>
+            <li>{{ package.maxGroupSize }}</li>
+            <li>{{ package.ratingsAverage }}</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col-lg-6 col-sm-12 p-5">
-      <h6 class="mt-5">About the {{ package?.name }} TOUR</h6>
+      <h2 class="mt-2">About the {{ package?.name }} TOUR</h2>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione fuga
-        vero quia, voluptatem fugit quibusdam aliquam doloribus porro, debitis
-        hic pariatur accusantium optio sit atque reiciendis blanditiis cumque.
-        Nam, ad! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-        Praesentium, esse inventore? Exercitationem nemo voluptates inventore,
-        dolores voluptatum vel iste sint asperiores nam culpa, libero assumenda
-        magni impedit quibusdam, optio voluptatem.
+      <p style="color: #a0bcc2">
+        A gift of the Himalayas to the world, Manali is a beautiful township
+        nestled in the picturesque Beas River valley. It is a rustic enclave
+        known for its cool climate and snow-capped mountains, offering respite
+        to tourists escaping scorching heat of the plains.
       </p>
     </div>
   </div>
@@ -167,20 +164,18 @@
       </div>
     </div>
   </div>
- <!-- reviews -->
+  <!-- reviews -->
   <div
     class="row d-flex justify-content-center border rounded-pill-lg rounded-sm m-5 py-3 shadow"
   >
     <div class="col-lg-6 p-5">
       <h3>What are you waiting for?</h3>
       <p>
-        Nostrum eos quis deleniti, quo veniam, quae officiis sapiente adipisci,
-        officia neque facilis! Odit voluptatum alias molestiae.
+        Always remember you don’t choose where you go, the Journey chooses your destiny
       </p>
     </div>
     <div *ngIf="loggedIn; else loggedOut" class="col-lg-3 p-5">
-      <button class="btn btn-primary rounded-pill" 
-      (click)="bookTour()">
+      <button class="btn btn-primary rounded-pill" (click)="bookTour()">
         Book tour now
       </button>
     </div>

@@ -17,3 +17,11 @@
 
   height: 70px;
 }
+.packageName {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-size: 5rem;
+
+  color: #000000;
+  font-weight: 400;
+  display: flex;
+}

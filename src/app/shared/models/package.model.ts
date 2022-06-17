@@ -1,17 +1,17 @@
 export interface Package {
-  _id: String;
+  _id: string;
   ratingsAverage: Number;
   ratingsQuantity: Number;
-  name: String;
+  name: string;
   difficulty: String;
   maxGroupSize: Number;
   price: Number;
   priceDiscount: Number;
-  summary: String;
-  description: String;
-  imageCover: String;
-  packageDate: String;
-  stateLocation: String;
+  summary: string;
+  description: string;
+  imageCover: string;
+  packageDate: string;
+  stateLocation: string;
   totalStops: Number;
   totalDays: Number;
 }

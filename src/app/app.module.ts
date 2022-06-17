@@ -1,5 +1,7 @@
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -25,13 +27,14 @@ import { SignUpComponent } from './user/sign-up/sign-up.component';
 import { PackageComponent } from './package/package.component';
 import { PackageListComponent } from './Admin/Packages/package-list/package-list.component';
 import { SideNavComponent } from './Admin/side-nav/side-nav.component';
-
+import { DataTablesModule } from 'angular-datatables';
 import {
   NgxUiLoaderHttpModule,
   NgxUiLoaderModule,
   NgxUiLoaderConfig,
 } from 'ngx-ui-loader';
 import { BookingStatusComponent } from './booking-status/booking-status.component';
+import { AddPackageComponent } from './Admin/Packages/add-package/add-package.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: 'red',
@@ -77,6 +80,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     PackageListComponent,
     SideNavComponent,
     BookingStatusComponent,
+    AddPackageComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -84,9 +89,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    MatSlideToggleModule,
     MatSidenavModule,
     MatSliderModule,
     MatDialogModule,
+    DataTablesModule,
     NgbModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot({

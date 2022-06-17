@@ -1,6 +1,6 @@
-<div class="container-fluid" style="background-color: #000000">
+<div class="container-fluid" style="background-color: #ffffff">
   <div class="row">
-    <div class="col-5 m-0 p-0 position-relative">
+    <div class="col-7 m-0 p-0 position-relative">
       <ngb-carousel
         *ngIf="images"
         [showNavigationArrows]="showNavigationArrows"
@@ -14,14 +14,18 @@
       <div id="triangle-1"></div>
       <div id="triangle-2"></div>
     </div>
-    <div class="col-7 m-0 p-0  p-5">
+    <div class="col-5 m-0 p-0  p-5">
       <div class="row">
-        <div class="col-12 ">
+        <div class="col-12 " style=" margin-bottom: 25%;">
           <h1 class="brandName">Dream Stay</h1>
+          <h2 class="tagline mb-3">
+            Plan Your Dream Stay with Us and Enjoy the Best time of Your life 😉  </h2>
         </div>
         <div class="col-12">
-          <h2 class="tagline mb-3">
-            Plan Your Dream stay Now with exciting cashback offers and prizes
+     
+          <h2 style=" font-weight: bolder; color: #204a58;"
+          class="description mb-3">
+            Plan Your Dream stay Now with exciting Offers and packages
           </h2>
           <p class="description">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
@@ -35,9 +39,9 @@
   </div>
 </div>
   <app-header></app-header>
-  <div class="content p-5" style="background-color: #f7f7f7">
+  <div class="content p-5" style="background-color: #ffffff">
     <div class="row">
-      <div *ngFor="let package of packages" class="col-sm-6 col-xxl-4">
+      <div *ngFor="let package of packages" class="col-sm-6 col-xxl-3">
         <div class="card mb-5 mx-4 shadow-lg">
           <div
             class="bg-image hover-overlay ripple"
@@ -53,7 +57,7 @@
           </div>
 
           <div class="card-body">
-            <h6>{{ package.difficulty }} {{ package.totalDays }} DAY TOUR</h6>
+            <h2 style="font-weight: 400; color: #204a58;">{{package.name}}</h2>
             <div>
               <p>{{ package.summary }}</p>
               <div class="row">
@@ -65,17 +69,20 @@
                   <i class="bi bi-flag-fill"></i>
                   <span class="ps-1">{{ package.totalStops }} stops</span>
                 </div>
+              </div>
+              <div class="row my-2">
                 <div class="col-6">
                   <i class="bi bi-calendar"></i>
-                  <span class="ps-1">{{ package.packageDate }} 2022</span>
+                  <span class="ps-1 mt-3">{{ package.packageDate }} 2022</span>
                 </div>
                 <div class="col-6">
                   <i class="bi bi-person"></i>
-                  <span class="ps-1">{{ package.maxGroupSize }}</span>
+                  <span class="ps-1 mt-3">{{ package.maxGroupSize }}</span>
                 </div>
+              
               </div>
             </div>
-            <div style="background-color: #f7f7f7">
+            <div style="background-color: #A0BCC2">
               <div class="row p-3 mt-1">
                 <div class="col-6">
                   <div class="row">
@@ -91,7 +98,8 @@
                 <div class="col-6 d-flex justify-content-end">
                   <a
                     ><button
-                      class="btn btn-primary border rounded-pill"
+                      class="btn border rounded-pill text-light"
+                      style="background-color: #204a58;"
                       (click)="onSubmit(package._id)"
                     >
                       Details

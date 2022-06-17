@@ -1,15 +1,17 @@
 <app-header></app-header>
-<div class="row mx-2 my-5 d-flex justify-content-center">
+<div *ngIf="bookingAvailable; else noBookings">
+<div class="row mx-2 my-5 d-flex justify-content-center "
+ *ngFor="let booking of bookingList">
   <div class="col-lg-4 col-sm-12 col-xs-12 ps-5">
     <div class="row">
       <div class="col-12">
-        <h4>{{ package?.name }}</h4>
-    <h1>₹{{ package?.price }}</h1>
-    <p>{{package?.description}}</p>
+        <h4>{{ booking.package?.name }}</h4>
+    <h1>₹{{ booking.package?.price }}</h1>
+    <p>{{booking.package?.description}}</p>
       </div>
     
     <div class="col-12 ">
-      <img class="img-fluid" [src]="package?.imageCover" alt="" />
+      <img class="img-fluid" [src]="booking.package?.imageCover" alt="" />
     </div>
   </div>
 </div>
@@ -27,15 +29,25 @@
        </span><hr>
        <h4 class="d-inline">Email address : </h4>
        <span>
-         {{user?.email}}
+         {{booking.user?.email}}
        </span><hr>
        <h4 class="d-inline">Booking time :</h4>
-       <span >
-         {{package?.packageDate}}
+       <span>
+         {{booking.package?.packageDate}}
        </span><hr>
       </div>
   
   </div>
+  <hr class=" mt-3">
 </div>
+</div>
+<ng-template #noBookings>
+<div   style="
+min-height: 100vh;
+
+">
+  <h1 class="d-flex justify-content-center pt-5">No Bookings Bookings Available</h1>
+</div>
+</ng-template>
 <app-footer></app-footer>
 
