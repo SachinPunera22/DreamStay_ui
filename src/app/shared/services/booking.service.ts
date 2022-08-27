@@ -27,4 +27,7 @@ export class BookingService {
   getBooking(id:any):Observable<any>{
     return this.http.get<any>(this.booking + id);
   }
+  list():Observable<any>{
+    return this.http.get<any>('payment/list');
+  }
 }

@@ -14,98 +14,97 @@
       <div id="triangle-1"></div>
       <div id="triangle-2"></div>
     </div>
-    <div class="col-5 m-0 p-0  p-5">
+    <div class="col-5 m-0 p-0 p-5">
       <div class="row">
-        <div class="col-12 " style=" margin-bottom: 25%;">
+        <div class="col-12" style="margin-bottom: 25%">
           <h1 class="brandName">Dream Stay</h1>
           <h2 class="tagline mb-3">
-            Plan Your Dream Stay with Us and Enjoy the Best time of Your life 😉  </h2>
+            Plan Your Dream Stay with Us and Enjoy the Best time of Your life 😉
+          </h2>
         </div>
         <div class="col-12">
-     
-          <h2 style=" font-weight: bolder; color: #204a58;"
-          class="description mb-3">
+          <h2
+            style="font-weight: bolder; color: #204a58"
+            class="description mb-3"
+          >
             Plan Your Dream stay Now with exciting Offers and packages
           </h2>
           <p class="description">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit
-            blanditiis eum totam sed consequatur quisquam facilis nostrum
-            voluptates odio soluta, laudantium ratione reiciendis? Eveniet, eius
-            ab harum recusandae quo magnam?
+            Watch the beauty of India and the World through a different lens!
+            Begin your next adventure now only with Dream Stay Special Tour
+            Packages.
           </p>
         </div>
       </div>
     </div>
   </div>
 </div>
-  <app-header></app-header>
-  <div class="content p-5" style="background-color: #ffffff">
-    <div class="row">
-      <div *ngFor="let package of packages" class="col-sm-6 col-xxl-3">
-        <div class="card mb-5 mx-4 shadow-lg">
-          <div
-            class="bg-image hover-overlay ripple"
-            data-mdb-ripple-color="light"
-          >
-            <img [src]="package.imageCover" class="img-fluid" />
-            <a href="#!">
-              <div
-                class="mask"
-                style="background-color: rgba(251, 251, 251, 0.15)"
-              ></div>
-            </a>
-          </div>
+<app-header></app-header>
+<div class="content p-5" style="background-color: #ffffff">
+  <div class="row">
+    <div *ngFor="let package of packages" class="col-sm-6 col-xxl-3">
+      <div class="card mb-5 mx-4 shadow-lg">
+        <div
+          class="bg-image hover-overlay ripple"
+          data-mdb-ripple-color="light"
+        >
+          <img [src]="package.imageCover" class="img-fluid" />
+          <a href="#!">
+            <div
+              class="mask"
+              style="background-color: rgba(251, 251, 251, 0.15)"
+            ></div>
+          </a>
+        </div>
 
-          <div class="card-body">
-            <h2 style="font-weight: 400; color: #204a58;">{{package.name}}</h2>
-            <div>
-              <p>{{ package.summary }}</p>
-              <div class="row">
-                <div class="col-6">
-                  <i class="bi bi-geo-alt-fill"></i>
-                  <span class="ps-1">{{ package.stateLocation }},India</span>
-                </div>
-                <div class="col-6">
-                  <i class="bi bi-flag-fill"></i>
-                  <span class="ps-1">{{ package.totalStops }} stops</span>
-                </div>
+        <div class="card-body">
+          <h2 style="font-weight: 400; color: #204a58">{{ package.name }}</h2>
+          <div>
+            <p>{{ package.summary }}</p>
+            <div class="row">
+              <div class="col-6">
+                <i class="bi bi-geo-alt-fill"></i>
+                <span class="ps-1">{{ package.stateLocation }},India</span>
               </div>
-              <div class="row my-2">
-                <div class="col-6">
-                  <i class="bi bi-calendar"></i>
-                  <span class="ps-1 mt-3">{{ package.packageDate }} 2022</span>
-                </div>
-                <div class="col-6">
-                  <i class="bi bi-person"></i>
-                  <span class="ps-1 mt-3">{{ package.maxGroupSize }}</span>
-                </div>
-              
+              <div class="col-6">
+                <i class="bi bi-flag-fill"></i>
+                <span class="ps-1">{{ package.totalStops }} stops</span>
               </div>
             </div>
-            <div style="background-color: #A0BCC2">
-              <div class="row p-3 mt-1">
-                <div class="col-6">
-                  <div class="row">
-                    <div class="col-12">{{ package.price }} Per Person</div>
-                  </div>
-                  <div class="col-12">
-                    {{ package.ratingsAverage }} rating ({{
-                      package.ratingsQuantity
-                    }})
-                  </div>
+            <div class="row my-2">
+              <div class="col-6">
+                <i class="bi bi-calendar"></i>
+                <span class="ps-1 mt-3">{{ package.packageDate }} 2022</span>
+              </div>
+              <div class="col-6">
+                <i class="bi bi-person"></i>
+                <span class="ps-1 mt-3">{{ package.maxGroupSize }}</span>
+              </div>
+            </div>
+          </div>
+          <div style="background-color: #a0bcc2">
+            <div class="row p-3 mt-1">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12">{{ package.price }} Per Person</div>
                 </div>
+                <div class="col-12">
+                  {{ package.ratingsAverage }} rating ({{
+                    package.ratingsQuantity
+                  }})
+                </div>
+              </div>
 
-                <div class="col-6 d-flex justify-content-end">
-                  <a
-                    ><button
-                      class="btn border rounded-pill text-light"
-                      style="background-color: #204a58;"
-                      (click)="onSubmit(package._id)"
-                    >
-                      Details
-                    </button>
-                  </a>
-                </div>
+              <div class="col-6 d-flex justify-content-end">
+                <a
+                  ><button
+                    class="btn border rounded-pill text-light"
+                    style="background-color: #204a58"
+                    (click)="onSubmit(package._id)"
+                  >
+                    Details
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -113,10 +112,10 @@
       </div>
     </div>
   </div>
-  <app-footer></app-footer>
-  <!-- <div class="row">
+</div>
+<app-footer></app-footer>
+<!-- <div class="row">
     <div class="image">
       <div class="my_bg img-fluid"></div>
     </div>
   </div> -->
-

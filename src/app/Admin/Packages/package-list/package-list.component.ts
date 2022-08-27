@@ -27,8 +27,8 @@ export class PackageListComponent implements OnInit ,OnDestroy{
   ) {}
   
   ngOnInit(): void {
-   
     this.getpackages();
+   
   }
   
   

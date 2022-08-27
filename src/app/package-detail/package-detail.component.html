@@ -1,8 +1,8 @@
 <app-header></app-header>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 cover-image wh-100 vh-100">
-      <div class="d-flex justify-content-center" style="margin-top: 15%">
+    <div [style.background-image]="'url(' + package.imageCover + ')'"  class="col-12 cover-image wh-100 vh-100">
+      <div class="d-flex justify-content-center" style="margin-top: 15%;">
         <h1 class="packageName">{{ package?.name | uppercase }}</h1>
       </div>
     </div>
@@ -12,7 +12,7 @@
       <div class="row" style="font-size: large">
         <div class="col-3 list-margin">
           <ul style="list-style: none">
-            <li>Next date</li>
+            
             <li>Difficulty</li>
             <li>Participants</li>
             <li>Rating</li>
@@ -32,19 +32,16 @@
       <h2 class="mt-2">About the {{ package?.name }} TOUR</h2>
 
       <p style="color: #a0bcc2">
-        A gift of the Himalayas to the world, Manali is a beautiful township
-        nestled in the picturesque Beas River valley. It is a rustic enclave
-        known for its cool climate and snow-capped mountains, offering respite
-        to tourists escaping scorching heat of the plains.
+       {{package?.description}}
       </p>
     </div>
   </div>
   <!-- reviews -->
   <div
     class="row d-flex justify-content-center rounded py-2"
-    style="background-color: aqua"
+    style="background-color:#204a58"
   >
-    <div
+  <div *ngFor="let review of reviews"
       class="col-lg-3 col-sm-6 m-2 p-5 border border-dark rounded"
       style="background-color: #fff"
     >
@@ -61,110 +58,23 @@
         </div>
 
         <div class="col-12">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos
-          laboriosam corrupti excepturi eveniet eaque! Nobis quia ipsa, quasi
+        {{review}}
         </div>
         <div class="col-12 text-center pt-3">
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
+          <i style="color: #a87bff;" class="bi bi-star-fill m-2"></i>
+          <i style="color: #a87bff;" class="bi bi-star-fill m-2"></i>
+          <i style="color: #a87bff;" class="bi bi-star-fill m-2"></i>
+          <i style="color: #a87bff;" class="bi bi-star-fill m-2"></i>
+          <i style="color: #a87bff;" class="bi bi-star-fill m-2"></i>
         </div>
       </div>
     </div>
+</div>
 
-    <div
-      class="col-lg-3 col-sm-6 m-2 p-5 border border-dark rounded"
-      style="background-color: #fff"
-    >
-      <div class="row">
-        <div class="col-3 mb-2 me-2">
-          <img
-            class="review-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFvhu-7P13Qs77QQsYlmiKj0EcYLzPyJBsKZDpzzxUZwkcMHzF3pOVnovRuyObS1xchLo&usqp=CAU"
-            alt=""
-          />
-        </div>
-        <div class="col-4 my-3">
-          <h4>Tony</h4>
-        </div>
 
-        <div class="col-12">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos
-          laboriosam corrupti excepturi eveniet eaque! Nobis quia ipsa, quasi
-        </div>
-        <div class="col-12 text-center pt-3">
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-        </div>
-      </div>
-    </div>
+    
 
-    <div
-      class="col-lg-3 col-sm-6 m-2 p-5 border border-dark rounded"
-      style="background-color: #fff"
-    >
-      <div class="row">
-        <div class="col-3 mb-2 me-2">
-          <img
-            class="review-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFvhu-7P13Qs77QQsYlmiKj0EcYLzPyJBsKZDpzzxUZwkcMHzF3pOVnovRuyObS1xchLo&usqp=CAU"
-            alt=""
-          />
-        </div>
-        <div class="col-4 my-3">
-          <h4>Tony</h4>
-        </div>
-
-        <div class="col-12">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos
-          laboriosam corrupti excepturi eveniet eaque! Nobis quia ipsa, quasi
-        </div>
-        <div class="col-12 text-center pt-3">
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-        </div>
-      </div>
-    </div>
-
-    <div
-      class="col-lg-3 col-sm-6 m-2 p-5 border border-dark rounded"
-      style="background-color: #fff"
-    >
-      <div class="row">
-        <div class="col-3 mb-2 me-2">
-          <img
-            class="review-img"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFvhu-7P13Qs77QQsYlmiKj0EcYLzPyJBsKZDpzzxUZwkcMHzF3pOVnovRuyObS1xchLo&usqp=CAU"
-            alt=""
-          />
-        </div>
-        <div class="col-4 my-3">
-          <h4>Tony</h4>
-        </div>
-
-        <div class="col-12">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis eos
-          laboriosam corrupti excepturi eveniet eaque! Nobis quia ipsa, quasi
-        </div>
-        <div class="col-12 text-center pt-3">
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-          <i class="bi bi-star-fill m-2"></i>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- reviews -->
+   
   <div
     class="row d-flex justify-content-center border rounded-pill-lg rounded-sm m-5 py-3 shadow"
   >
@@ -182,7 +92,7 @@
 
     <ng-template #loggedOut>
       <div class="col-lg-3 p-5">
-        <button class="btn btn-primary rounded-pill" (click)="bookTour()">
+        <button style="background-color: #204a58;"class="btn text-light  rounded-pill" (click)="bookTour()">
           Log in to book tour
         </button>
       </div>

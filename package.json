@@ -23,6 +23,7 @@
     "@angular/router": "~13.3.0",
     "@ng-bootstrap/ng-bootstrap": "^12.1.2",
     "@stripe/stripe-js": "^1.30.0",
+    "@swimlane/ngx-charts": "^20.1.0",
     "angular-datatables": "^13.1.0",
     "angular-material": "^1.2.5",
     "bootstrap": "^5.1.3",

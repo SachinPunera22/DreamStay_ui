@@ -1,0 +1,112 @@
+<div class="header mt-2">
+    <div class="header-content">
+      <nav class="navbar navbar-expand">
+        <div class="collapse navbar-collapse justify-content-between">
+          <ul class="navbar-nav header-left">
+            <li>
+              <h1 class="ms-3" style="font-weight: bolder">Dashboard</h1>
+            </li>
+          </ul>
+  
+          <ul class="navbar-nav header-left">
+            <li
+              class="nav-item dropdown header-profile"
+              style="margin: 0 10px 0 100px"
+            >
+              <img
+                src="../../../../assets/Images/profile_pic.png"
+                width="40"
+                style="border-radius: 35px"
+                alt=""
+              />
+            </li>
+            <li>
+              <small style="color: #89879f"> DREAM STAY</small>
+              <span style="display: block; font-weight: bold">ADMIN</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="main-container row py-3 px-5 border border-primary rounded">
+    <div class="row ">
+        <div class=" col shadow rounded" style="height: 80px;">
+           
+            <h2>{{totalUser}}</h2> 
+            <span >Total Customer
+            </span>
+        </div>
+        <div class=" col mx-3 shadow rounded" style="height: 80px;">
+          <div class="row">
+         
+          
+            <div class="col-9">
+              <h2>{{totalbookings}}</h2> 
+              <span >Total bookings
+              </span>
+            </div>
+            <div class="col-3 px-0 pt-3" >
+              <i style="color:#89879f;  font-size: 3rem; "
+              class="bi bi-person-circle "></i>
+            </div>
+          </div>
+         
+      </div>
+      <div class=" col shadow rounded" style="height: 80px;">
+           
+        <h2>{{totalbookings}}</h2> 
+        <span >Total bookings
+        </span>
+    </div>
+       
+       
+
+    
+  
+
+  <div class="col-12 pt-5">
+    <hr>
+    <h2>Total revenue</h2>
+    <ngx-charts-line-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="multi"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-line-chart>
+  </div>
+  <div class="col-12">
+    <hr>
+    <h2>Total Bookings</h2>
+    <ngx-charts-line-chart
+  [view]="view"
+  [scheme]="colorScheme"
+  [legend]="legend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  [timeline]="timeline"
+  [results]="data"
+  (select)="onSelect($event)"
+  (activate)="onActivate($event)"
+  (deactivate)="onDeactivate($event)"
+  >
+</ngx-charts-line-chart>
+  </div>
+</div>
+</div>

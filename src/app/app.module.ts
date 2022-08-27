@@ -1,11 +1,12 @@
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import{MatToolbarModule}from '@angular/material/toolbar'
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-
+import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-
+import { MatListModule } from '@angular/material/list';
 import {
   HttpClient,
   HttpClientModule,
@@ -33,8 +34,13 @@ import {
   NgxUiLoaderModule,
   NgxUiLoaderConfig,
 } from 'ngx-ui-loader';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BookingStatusComponent } from './booking-status/booking-status.component';
 import { AddPackageComponent } from './Admin/Packages/add-package/add-package.component';
+import { AdminComponent } from './Admin/admin/admin.component';
+import { BookingListComponent } from './Admin/booking-list/booking-list.component';
+import { CustomerListComponent } from './Admin/customer-list/customer-list.component';
+import { DashboardComponent } from './Admin/dashboard/dashboard.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: 'red',
@@ -81,6 +87,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SideNavComponent,
     BookingStatusComponent,
     AddPackageComponent,
+    AdminComponent,
+    BookingListComponent,
+    CustomerListComponent,
+    DashboardComponent,
     
   ],
   imports: [
@@ -91,11 +101,15 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HttpClientModule,
     MatSlideToggleModule,
     MatSidenavModule,
+     MatToolbarModule,
     MatSliderModule,
+    MatIconModule,
+    MatListModule,
     MatDialogModule,
     DataTablesModule,
     NgbModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxChartsModule,
     NgxUiLoaderHttpModule.forRoot({
       showForeground: true,
     }),

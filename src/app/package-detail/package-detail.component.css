@@ -2,7 +2,6 @@
   margin-left: 40%;
 }
 .cover-image {
-  background-image: url("https://mdbcdn.b-cdn.net/img/new/standard/nature/111.webp");
   height: 100%;
 
   /* Center and scale the image nicely */
@@ -10,7 +9,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.review-img {
+.review-img { 
   border-radius: 50%;
 
   width: 70px;
@@ -21,7 +20,7 @@
   font-family: "Kdam Thmor Pro", sans-serif;
   font-size: 5rem;
 
-  color: #000000;
+  color: #91f266;
   font-weight: 400;
   display: flex;
 }

@@ -18,6 +18,9 @@ export class UserService {
   all(): Observable<User[]> {
     return this.http.get<User[]>(this.registerUrl);
   }
+  list(): Observable<User[]> {
+    return this.http.get<User[]>("user/userList");
+  }
 
   createUser(data: any): Observable<User> {
     return this.http.post<User>(this.registerUrl, data);

@@ -13,11 +13,11 @@ import { loadStripe } from '@stripe/stripe-js';
   styleUrls: ['./package-detail.component.css'],
 })
 export class PackageDetailComponent implements OnInit {
-  tittle = 'd';
-  id: string;
-  session: any;
-  loggedIn: boolean;
-
+ 
+  public id: string;
+  public session: any;
+  public loggedIn: boolean;
+  public reviews:string[]=[];
   public package: Package = {} as Package;
 
   constructor(
@@ -41,6 +41,7 @@ export class PackageDetailComponent implements OnInit {
   }
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
+    this.reviews=["Wonderful Destination. Loved the Vibe and People","Dream Stay gives the best accomadation. My family loved the holiday","Great staff and hospitality Services","Amazing Adventures and food was also awesome","A great Budget friendly trip and fabulous experience"]
     this.PackageService.getPackage(this.id).subscribe({
       next: (data: Package) => {
         this.package = data;
